@@ -17,11 +17,17 @@ class Counter extends Component {
     //     this.handleIncrement = this.handleIncrement.bind(this);
     // }
 
-    handleIncrement = () => {
-        console.log('Increment Clicked!', this);
+    handleIncrement = (product) => {
+
+        console.log(product);
+        // console.log('Increment Clicked!', this);
         // this.state.count++;
         this.setState({ count: this.state.count + 1 })
     }
+
+    // doHandleIncrement = () => {
+    //     this.handleIncrement({id:1});
+    // }
 
     render() {
         // let classes = this.getBadgeClasses(); 
@@ -29,7 +35,7 @@ class Counter extends Component {
             <React.Fragment>
                 {/* <img src={this.state.imageUrl} alt=""></img> */}
                 <span style={{fontSize:30}} className={this.getBadgeClasses()}> {this.formatCount()} </span>
-                <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm">Increment</button>
+                <button onClick={() => this.handleIncrement({id:1})} className="btn btn-secondary btn-sm">Increment</button>
                 <ul>
                     { this.state.tags.map(tag => <li key={tag}>{tag}</li>)}
                 </ul>
