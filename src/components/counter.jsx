@@ -1,9 +1,18 @@
 import React, { Component } from 'react'
 
 class Counter extends Component {
+    componentDidMount(prevProps, prevState) {
+        console.log("prevProps", prevProps);
+        console.log("prevState", prevState);
+        // if(prevProps.counter.value !== this.props.counter.value) {
+        //     //Ajax call and get new data from the server
+        // }
+        
+    }
 
     render() {
-        console.log("props", this.props);
+        // console.log("props", this.props);
+        console.log("counter - Rendered");
         
         return (
             <React.Fragment>
